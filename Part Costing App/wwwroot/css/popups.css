@@ -1,0 +1,444 @@
+﻿
+/* Page popup - Page popup - Page popup - Page popup - Page popup - Page popup */
+
+.overlay {
+    display: none;
+    position: fixed;
+    backdrop-filter: blur(20px);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgba(150, 150, 150, 0.15);
+    align-items: center;
+    justify-content: center;
+}
+
+    .overlay > * {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.popup {
+    width: 1000px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(200, 200, 200, 0.05) 0px 0px 20px 10px;
+    padding: 0;
+}
+
+.popup-content {
+    min-width: 750px;
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.closeButton {
+    font-size: 40px;
+    color: var(--font-colour);
+    font-weight: lighter;
+}
+/*SETTINGS POPUP - SETTINGS POPUP*/
+
+#clearAllPartData {
+    padding: 10px;
+    margin: 10px;
+    border: 2px red solid;
+    border-radius: 5px;
+}
+
+/* NEW PART POPUP - NEW PART POPUP */
+#uploadFileForm {
+    width: 100%;
+    height: 100%;
+}
+
+    #uploadFileForm > * > p {
+        color: #555;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    #uploadFileForm * > p > span {
+        color: var(--blue-accent);
+    }
+
+    #uploadFileForm * > b {
+        color: #000;
+        font-weight: bolder;
+        font-size: 1rem;
+    }
+
+.drop-area {
+    width: 100%;
+    height: 250px;
+    border: 3px solid #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+    .drop-area:hover {
+        border-color: var(--blue-accent);
+    }
+
+    .drop-area > svg {
+        background: none;
+    }
+
+#uploadFileForm * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#uploadFileForm > div:last-child {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+    #uploadFileForm > div:last-child > p {
+        color: #888;
+        font-weight: 400;
+        font-size: .8rem;
+    }
+
+#uploadFile, #questionnaireButtons > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue-accent);
+    padding: 5px;
+    padding-inline: 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+    #uploadFile:hover, #questionnaireButtons > button:hover {
+        background: rgb(54, 84, 255);
+    }
+
+/*input {
+    display: none;
+    background: blue;
+}*/
+
+/* NEW PART POPUP - NEW PART POPUP */
+
+/* MENU OPEN AND CLOSE */
+
+#menu-burger-input:checked ~ .menu-box {
+    width: 0px;
+    opacity: 0%;
+}
+
+#menu-burger-input:checked ~ #menu-burger-button {
+    color: var(--font-colour);
+}
+
+/* MENU OPEN AND CLOSE 
+
+ Questionnaire Section */
+
+#questionnaireContent {
+    display: none;
+    box-sizing: border-box;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    padding: 50px;
+    background: white;
+}
+
+.questionnaire {
+    height: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* aaa */
+#form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-slide {
+    display: none;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .form-slide.active {
+        display: flex;
+    }
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background: var(--blue-accent);
+    width: calc(100%*1/3);
+    width: 0;
+    border-radius: 0px 3px 3px 0px;
+    transition: width 0.3s ease;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.next {
+    background: #333;
+    color: #fff;
+}
+
+.back {
+    background-color: #ccc;
+    color: #333;
+}
+
+.finish {
+    display: none;
+    border: 1px solid #333;
+}
+
+input, select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px grey solid;
+}
+
+#questionnaireButtons {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* - - Loading PDF styles */
+
+#loadingPage {
+    width: 100%;
+    box-sizing: content-box;
+    border: var(--border);
+    border-radius: 5px;
+    height: 100%;
+}
+
+#loadingIcon {
+    padding: 30px;
+    stroke: rgb(111, 235, 111);
+    aspect-ratio: 1/1;
+    height: 100px;
+    animation: loadPDF_LoadingAnimation 20s infinite;
+}
+
+/* Questionnaire Section */
+
+/* ANIMATIONS */
+
+/* - - Generic */
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* - Popup Animations-  */
+
+@keyframes overlayAniation_Open {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes popupAniation_Open {
+    0% {
+        opacity: 0%;
+        width: 100px;
+    }
+
+    100% {
+        opacity: 100%;
+        width: 1000px;
+    }
+}
+
+@keyframes overlayAniation_Close {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* - - Proceed to Questionnaire */
+
+@keyframes transitionToQuestionnaire {
+    0% {
+    }
+
+    50% {
+        width: 300px;
+        height: 550px;
+    }
+
+    100% {
+        width: 1000px;
+        height: 700px;
+    }
+}
+
+/* - - Loading PDF Animation */
+
+@keyframes loadPDF_LoadingAnimation {
+    0% {
+        stroke: rgb(111, 235, 111);
+    }
+
+    10% {
+        stroke: rgb(111, 235, 198);
+    }
+
+    20% {
+        stroke: rgb(111, 150, 235);
+    }
+
+    30% {
+        stroke: rgb(43, 46, 238);
+    }
+
+    40% {
+        stroke: rgb(98, 65, 241);
+    }
+
+    50% {
+        stroke: rgb(238, 78, 203);
+    }
+
+    60% {
+        stroke: rgb(230, 77, 103);
+    }
+
+    70% {
+        stroke: rgb(241, 124, 56);
+    }
+
+    80% {
+        stroke: rgb(255, 234, 44);
+    }
+
+    90% {
+        stroke: rgb(180, 233, 82);
+    }
+
+    100% {
+        stroke: rgb(111, 235, 111);
+    }
+}
+
+/*SPINNER CSS*/
+
+.spinner_V8m1 {
+    transform-origin: center;
+    animation: spinner_zKoa 2s linear infinite
+}
+
+    .spinner_V8m1 circle {
+        stroke-linecap: round;
+        animation: spinner_YpZS 1.5s ease-in-out infinite
+    }
+
+@keyframes spinner_zKoa {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes spinner_YpZS {
+    0% {
+        stroke-dasharray: 0 150;
+        stroke-dashoffset: 0
+    }
+
+    47.5% {
+        stroke-dasharray: 42 150;
+        stroke-dashoffset: -16
+    }
+
+    95%,100% {
+        stroke-dasharray: 42 150;
+        stroke-dashoffset: -59
+    }
+}
+
+/*SPINNER CSS*/

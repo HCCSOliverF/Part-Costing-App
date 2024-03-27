@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part Costing App", "Part Costing App\Part Costing App.csproj", "{CAEC2988-BDDE-459C-8F20-C741E04E4D86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAEC2988-BDDE-459C-8F20-C741E04E4D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEC2988-BDDE-459C-8F20-C741E04E4D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEC2988-BDDE-459C-8F20-C741E04E4D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEC2988-BDDE-459C-8F20-C741E04E4D86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EEE98BC-AFBB-4AD7-93AD-E291378EFA5E}
+	EndGlobalSection
+EndGlobal

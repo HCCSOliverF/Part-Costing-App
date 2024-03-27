@@ -1,0 +1,294 @@
+html {
+    --menu-primary-color: rgb(35, 35, 35);
+    --menu-secondary-color: rgb(50, 50, 50);
+    --blue-accent: rgb(43, 46, 238);
+    --menu-border: rgb(60, 60, 60);
+    --menu-font-size: 12px;
+    --menu-font-colour: #ccc;
+    --menu-radius: 3px;
+    --menu-width: 400px;
+    --menu-button-header-size: 30px;
+    --menu-svg-size: 15px;
+    --menu-svg-scaled-size: var(--menu-button-header-size);
+    --menu-padding: 15px;
+    --menu-indented-padding: calc(var(--menu-padding) + (var(--menu-button-header-size) - (var(--menu-svg-size)*0.3*2 + var(--menu-svg-size)))/2);
+    /*    --menu-indented-padding: calc(var(--menu-padding) + var(--menu-button-header-size));*/
+    /*    --menu-indented-padding: 20.5px;*/
+    --menu-gap: 4px;
+}
+
+#size-cover {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--smoke);
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1420px) {
+    #size-cover {
+        display: flex;
+    }
+}
+
+/* SIDEBAR - SIDEBAR - SIDEBAR - SIDEBAR - SIDEBAR - SIDEBAR - SIDEBAR */
+.menu-box {
+    margin: 0;
+    padding: 0;
+    width: var(--menu-width);
+    box-sizing: content-box;
+    overflow: hidden;
+    z-index: 5;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    border-right: var(--menu-border) 1px solid;
+    opacity: 100%;
+    transition: 0.5s cubic-bezier(0.7,0.2,0.05,1.0);
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    width: var(--menu-width);
+    height: 100%;
+    display: grid;
+    grid-template-rows: var(--menu-font-size) var(--menu-button-header-size) 1fr;
+    gap: 10px;
+    padding-block: var(--menu-padding);
+    gap: var(--menu-padding);
+    font-size: var(--menu-font-size);
+    font-weight: 400;
+    color: var(--menu-font-colour);
+    background: var(--menu-primary-color);
+}
+
+    .menu > *, #menu-burger-button {
+        gap: var(--menu-gap);
+        padding-block: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+.menu-header, .buttons-header, .menu-list-container > div {
+    padding-inline: var(--menu-padding);
+}
+
+.menu-list-container > div {
+    padding-inline: var(--menu-indented-padding);
+}
+
+
+* {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+svg {
+    height: var(--menu-svg-size);
+    aspect-ratio: 1/1;
+    border-radius: var(--menu-radius);
+}
+
+menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+menu p {
+    margin: 0;
+    font-weight: 500;
+}
+
+menu ul {
+    list-style-type: none;
+}
+
+/* HEADER - HEADER - HEADER - HEADER - HEADER - HEADER - HEADER - HEADER */
+.menu-header {
+    justify-content: end;
+}
+
+    .menu-header > * {
+        padding-inline: calc(var(--menu-svg-size)*.25);
+    }
+
+#menu-burger-button {
+    height: var(--menu-font-size);
+    color: var(--menu-font-colour);
+    position: fixed;
+    z-index: 10;
+    -webkit-touch-callout: none;
+    cursor: pointer;
+    transition: color 0.5s cubic-bezier(0.7,0.2,0.05,1.0);
+}
+
+    #menu-burger-button > svg {
+        height: var(--menu-svg-scaled-size);
+    }
+
+#menu-burger-input {
+    display: none;
+}
+
+/* BUTTONS HEADER - BUTTONS HEADER - BUTTONS HEADER - BUTTONS HEADER */
+.buttons-header > button {
+    height: 100%;
+    background: var(--menu-secondary-color);
+    border-radius: var(--menu-radius);
+    transition: background 0.2s cubic-bezier(0.7,0.2,0.05,1.0);
+}
+
+    .buttons-header > button:hover {
+        background: var(--menu-border);
+    }
+
+.svg-container {
+    aspect-ratio: 1/1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .svg-container > svg {fill: var(--smoke);}
+    #plus_svg {height: 25px;}
+    #home_svg {height: 12px;}
+
+.new-part-button {width: 100%;}
+    .new-part-button > div > svg {stroke: var(--smoke);}
+    .new-part-button > p {width: 100%;}
+
+/* MENU LIST - MENU LIST - MENU LIST - MENU LIST - MENU LIST */
+
+.menu-list-container {
+    flex-direction: column;
+}
+
+    .menu-list-container svg {padding-inline: calc(var(--menu-padding)*.3);}
+
+    .menu-list-container > div {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        justify-content: space-between;
+        border-radius: var(--menu-radius);
+    }
+
+        .menu-list-container > div:hover {
+            background: rgb(40, 40, 40);
+        }
+
+        .open-part, .menu-list-container > div > div {
+            display: flex;
+            flex-direction: row;
+            gap: var(--menu-gap);
+            align-items: center;
+        }
+
+.button-span:hover { background: var(--menu-border);}
+.open-part {width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page buttons - Page buttons - Page buttons - Page buttons - Page buttons */
+.page-button-onLight, .closeButton {
+    aspect-ratio: 1/1;
+    height: var(--menu-button-header-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border-radius: var(--radius);
+    color: var(--menu-border);
+    z-index: 2;
+    cursor: pointer;
+    transform-origin: center;
+    transition: 0.5s cubic-bezier(0.7,0.2,0.05,1.0);
+}
+
+    .page-button-onLight > svg {
+        margin: 0;
+        padding: 0;
+        color: var(--font-colour);
+        height: 100%;
+    }
+
+/* Settings */
+#settings, .closeButton {
+    right: calc(var(--menu-padding));
+    top: calc(var(--menu-padding));
+    animation: overlayAniation_Open 2s ease;
+}
+
+    #settings:hover {
+        transform: rotate(60deg);
+    }
+
+/* Help */
+#help {
+    right: calc(var(--menu-padding));
+    bottom: calc(var(--menu-padding));
+}
+
+    #help:hover {
+        transform: rotate(0.6deg);
+        transition: .3s cubic-bezier(0.5,120,0.5,-120);
+    }
+
+/* Burger Menu */
+#menu-burger-button {
+    left: var(--menu-padding);
+    top: var(--menu-padding);
+}

@@ -1,0 +1,119 @@
+﻿html {
+    --content-padding: 80px;
+    --content-border: 1px solid hsla(0, 0%, 20%, 0.15);
+}
+
+.content {
+    position: relative;
+    box-sizing: border-box;
+    justify-content: end;
+    gap: 60px;
+    padding: var(--content-padding);
+}
+
+.usage-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+    .usage-table > * {
+        padding: 10px;
+        border: var(--content-border);
+        border-radius: 10px;
+        min-height: 50px;
+        width: 400px;
+    }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shadow-button {
+    text-shadow: var(--box-shadow-onLight-3D-deboss);
+    filter: blur(2px);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-onLight-3D-emboss);
+}
+
+.new-part-button-Main_Page {
+    height: 60px;
+    min-width: 300px;
+}
+
+a > h2, button > h2 {
+    position: absolute;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--font-colour);
+}
+
+.content > h1 {
+    color: var(--grey);
+    font-weight: 600;
+    font-size: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/*Open Part Page - Open Part Page - Open Part Page - Open Part Page - Open Part Page - Open Part Page*/
+
+.openPart-container {
+    width: 600px;
+    height: 100%;
+    border: var(--content-border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.openPart-container * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.openPart-preview {
+    height: 100%;
+    width: 100%;
+    background: rgb(216, 216, 216);
+    border-radius: 10px;
+    border: var(--content-border);
+    flex-direction: column;
+}
+
+    .openPart-preview > * {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 20px;
+    }
+
+    .openPart-preview > *:not(:last-child) {
+        border-bottom: var(--content-border);
+    }
+
+.openPart-bottomBar {
+    justify-content: space-between;
+}
+
+.openPDF-button-openPart-Page {
+    height: 50px;
+    min-width: 200px;
+}

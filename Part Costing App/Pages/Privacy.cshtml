@@ -1,0 +1,83 @@
+﻿@page
+@model OpenPartModel
+
+<div class="openPart-container">
+    <h1 id="part-heading-name"></h1>
+
+    <div class="openPart-preview">
+        <div>
+            <p>Name</p>
+            <p id="part-name"></p>
+        </div>
+
+        <div>
+            <p>ID</p>
+            <p id="part-id"></p>
+        </div>
+
+        <div>
+            <p>Material</p>
+            <p id="part-material"></p>
+        </div>
+
+        <div>
+            <p>Finish</p>
+            <p id="part-finish"></p>
+        </div>
+        
+        <div>
+            <p>Units Ordered</p>
+            <p id="part-unitsOrdered"></p>
+        </div>
+
+        <div>
+            <p>Discount Price</p>
+            <p id="part-discountPrice"></p>
+        </div>
+
+        <div>
+            <p>Discount Percentage</p>
+            <p id="part-discountPercent"></p>
+        </div>
+
+        <div>
+            <p>Price Before Discount</p>
+            <p id="part-priceBeforeDiscount"></p>
+        </div>
+
+        <div>
+            <p>Final Cost</p>
+            <p id="part-cost"></p>
+        </div>
+    </div>
+
+    <div class="openPart-bottomBar">
+        <h2 id="part-heading-id"></h2>
+@*         <a asp-page-handler="DownloadPDF" class="button-container" id="newPartButton"> *@
+        <a class="button-container" id="newPartButton">
+            <div class="shadow-button openPDF-button-openPart-Page"></div>
+            <h2>Open PDF</h2>
+        </a>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const params = new URLSearchParams(window.location.search);
+
+        document.getElementById("part-heading-name").textContent = params.get('name');
+
+        document.getElementById("part-name").textContent = params.get('name');
+        document.getElementById("part-id").textContent = params.get('id');
+        document.getElementById("part-material").textContent = params.get('material');
+        document.getElementById("part-finish").textContent = params.get('finish');
+        document.getElementById("part-unitsOrdered").textContent = params.get('units');
+        document.getElementById("part-discountPrice").textContent = `£${parseFloat(params.get('discountPrice')).toFixed(2)}`;
+        document.getElementById("part-discountPercent").textContent = `${params.get('discountPercent')}%`;
+        document.getElementById("part-priceBeforeDiscount").textContent = `£${parseFloat(params.get('priceBeforeDiscount')).toFixed(2)}`;
+        document.getElementById("part-cost").textContent = `£${parseFloat(params.get('cost')).toFixed(2)}`;
+
+        document.getElementById("part-heading-id").textContent = `ID: ${params.get('id')}`;
+        document.getElementById("newPartButton").href = `/files/${params.get('id')}.pdf`;
+    });
+</script>

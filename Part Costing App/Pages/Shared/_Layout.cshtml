@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Part_Costing_App</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+@*     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/defaults.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/template.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/popups.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main_page.css" asp-append-version="true" />
+@*     <link rel="stylesheet" href="~/Part_Costing_App.styles.css" asp-append-version="true" /> *@
+</head>
+<body>
+    <div id="size-cover">Please enlarge window</div>
+
+@* 
+    <iconify-icon id="common-icons">
+        <iconify-icon class="icon" icon="ph:file-light"></iconify-icon>
+        <iconify-icon class="icon" icon="ph:heart-light"></iconify-icon>
+    </iconify-icon>
+*@
+
+    <div class="page-button-onLight" id="settings" onclick="openPopup('settingsPopup', 'settingsPopupOverlay')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="currentColor" d="M 24 4 C 22.423103 4 20.902664 4.1994284 19.451172 4.5371094 A 1.50015 1.50015 0 0 0 18.300781 5.8359375 L 17.982422 8.7382812 C 17.878304 9.6893592 17.328913 10.530853 16.5 11.009766 C 15.672739 11.487724 14.66862 11.540667 13.792969 11.15625 L 13.791016 11.15625 L 11.125 9.9824219 A 1.50015 1.50015 0 0 0 9.4257812 10.330078 C 7.3532865 12.539588 5.7626807 15.215064 4.859375 18.201172 A 1.50015 1.50015 0 0 0 5.4082031 19.845703 L 7.7734375 21.580078 C 8.5457929 22.147918 9 23.042801 9 24 C 9 24.95771 8.5458041 25.853342 7.7734375 26.419922 L 5.4082031 28.152344 A 1.50015 1.50015 0 0 0 4.859375 29.796875 C 5.7625845 32.782665 7.3519262 35.460112 9.4257812 37.669922 A 1.50015 1.50015 0 0 0 11.125 38.015625 L 13.791016 36.841797 C 14.667094 36.456509 15.672169 36.511947 16.5 36.990234 C 17.328913 37.469147 17.878304 38.310641 17.982422 39.261719 L 18.300781 42.164062 A 1.50015 1.50015 0 0 0 19.449219 43.460938 C 20.901371 43.799844 22.423103 44 24 44 C 25.576897 44 27.097336 43.800572 28.548828 43.462891 A 1.50015 1.50015 0 0 0 29.699219 42.164062 L 30.017578 39.261719 C 30.121696 38.310641 30.671087 37.469147 31.5 36.990234 C 32.327261 36.512276 33.33138 36.45738 34.207031 36.841797 L 36.875 38.015625 A 1.50015 1.50015 0 0 0 38.574219 37.669922 C 40.646713 35.460412 42.237319 32.782983 43.140625 29.796875 A 1.50015 1.50015 0 0 0 42.591797 28.152344 L 40.226562 26.419922 C 39.454197 25.853342 39 24.95771 39 24 C 39 23.04229 39.454197 22.146658 40.226562 21.580078 L 42.591797 19.847656 A 1.50015 1.50015 0 0 0 43.140625 18.203125 C 42.237319 15.217017 40.646713 12.539588 38.574219 10.330078 A 1.50015 1.50015 0 0 0 36.875 9.984375 L 34.207031 11.158203 C 33.33138 11.54262 32.327261 11.487724 31.5 11.009766 C 30.671087 10.530853 30.121696 9.6893592 30.017578 8.7382812 L 29.699219 5.8359375 A 1.50015 1.50015 0 0 0 28.550781 4.5390625 C 27.098629 4.2001555 25.576897 4 24 4 z M 24 7 C 24.974302 7 25.90992 7.1748796 26.847656 7.3398438 L 27.035156 9.0644531 C 27.243038 10.963375 28.346913 12.652335 30 13.607422 C 31.654169 14.563134 33.668094 14.673009 35.416016 13.904297 L 37.001953 13.207031 C 38.219788 14.669402 39.183985 16.321182 39.857422 18.130859 L 38.451172 19.162109 C 36.911538 20.291529 36 22.08971 36 24 C 36 25.91029 36.911538 27.708471 38.451172 28.837891 L 39.857422 29.869141 C 39.183985 31.678818 38.219788 33.330598 37.001953 34.792969 L 35.416016 34.095703 C 33.668094 33.326991 31.654169 33.436866 30 34.392578 C 28.346913 35.347665 27.243038 37.036625 27.035156 38.935547 L 26.847656 40.660156 C 25.910002 40.82466 24.973817 41 24 41 C 23.025698 41 22.09008 40.82512 21.152344 40.660156 L 20.964844 38.935547 C 20.756962 37.036625 19.653087 35.347665 18 34.392578 C 16.345831 33.436866 14.331906 33.326991 12.583984 34.095703 L 10.998047 34.792969 C 9.7799772 33.330806 8.8159425 31.678964 8.1425781 29.869141 L 9.5488281 28.837891 C 11.088462 27.708471 12 25.91029 12 24 C 12 22.08971 11.087719 20.290363 9.5488281 19.160156 L 8.1425781 18.128906 C 8.8163325 16.318532 9.7814501 14.667839 11 13.205078 L 12.583984 13.902344 C 14.331906 14.671056 16.345831 14.563134 18 13.607422 C 19.653087 12.652335 20.756962 10.963375 20.964844 9.0644531 L 21.152344 7.3398438 C 22.089998 7.1753403 23.026183 7 24 7 z M 24 16 C 19.599487 16 16 19.59949 16 24 C 16 28.40051 19.599487 32 24 32 C 28.400513 32 32 28.40051 32 24 C 32 19.59949 28.400513 16 24 16 z M 24 19 C 26.779194 19 29 21.220808 29 24 C 29 26.779192 26.779194 29 24 29 C 21.220806 29 19 26.779192 19 24 C 19 21.220808 21.220806 19 24 19 z"></path></svg></div>
+    <div class="page-button-onLight" id="help" onclick="openPopup('helpPopup', 'helpPopupOverlay')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"/><circle cx="16" cy="23.5" r="1.5"/><path fill="currentColor" d="M17,8H15.5A4.49,4.49,0,0,0,11,12.5V13h2v-.5A2.5,2.5,0,0,1,15.5,10H17a2.5,2.5,0,0,1,0,5H15v4.5h2V17a4.5,4.5,0,0,0,0-9Z"/></svg></div>
+
+
+
+
+    <div class="overlay" id="settingsPopupOverlay">
+        <div class="popup" id="settingsPopup">
+            <div class="popup-content">
+                Settings Popup
+                <button id="clearAllPartData" onclick="clearLocalStorage(); renderMenuParts(); closePopup('settingsPopupOverlay');">
+                    Clear all part data
+                </button>
+            </div>
+        </div>
+        <span class="closeButton" onclick="closePopup('settingsPopupOverlay')">&times;</span>
+    </div>
+
+    <div class="overlay" id="helpPopupOverlay">
+        <div class="popup" id="helpPopup">
+            <div class="popup-content">
+                Help Popup
+            </div>
+        </div>
+        <span class="closeButton" onclick="closePopup('helpPopupOverlay')">&times;</span>
+    </div> 
+
+
+
+    <input type="checkbox" id="menu-burger-input"/>
+    <label for="menu-burger-input" id="menu-burger-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M144 128a16 16 0 1 1-16-16a16 16 0 0 1 16 16Zm-84-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16Zm136 0a16 16 0 1 0 16 16a16 16 0 0 0-16-16Z"/></svg></label>
+
+
+    <div class="menu-box">
+        <menu class="menu">
+            <div class="menu-header">
+                <p>EXPLORER</p>
+            </div>
+
+            <div class="buttons-header">
+                <button class="clear-all-button">
+                    <div onclick ="openHomePage()" class="svg-container">
+                        <svg id="home_svg" height="15px" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M62.79,29.172l-28-28C34.009,0.391,32.985,0,31.962,0s-2.047,0.391-2.828,1.172l-28,28 c-1.562,1.566-1.484,4.016,0.078,5.578c1.566,1.57,3.855,1.801,5.422,0.234L8,33.617V60c0,2.211,1.789,4,4,4h16V48h8v16h16 c2.211,0,4-1.789,4-4V33.695l1.195,1.195c1.562,1.562,3.949,1.422,5.516-0.141C64.274,33.188,64.356,30.734,62.79,29.172z"></path> </g></svg>
+                    </div>
+                </button>
+                <button class="new-part-button" onclick="openPopup('partWindowPopup', 'partWindowOverlay')">
+                    <p>New Part</p>
+                    <div class="svg-container">
+                        <svg id="plus_svg" height="50px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div>
+                </button>
+            </div>
+
+            <div class="menu-list-container" id="menuListContainer">
+                <div>
+                    <button class="open-part" onclick="loadContent()">
+                        <svg class="button-span" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="m212.24 83.76l-56-56A6 6 0 0 0 152 26H56a14 14 0 0 0-14 14v176a14 14 0 0 0 14 14h144a14 14 0 0 0 14-14V88a6 6 0 0 0-1.76-4.24ZM158 46.48L193.52 82H158ZM200 218H56a2 2 0 0 1-2-2V40a2 2 0 0 1 2-2h90v50a6 6 0 0 0 6 6h50v122a2 2 0 0 1-2 2Z" /></svg>
+                        <p>New Part 55</p>
+                    </button>
+                    <div>
+                        <button> <svg class="button-span" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11l-5 5Zm-6 4q-.825 0-1.413-.588T4 18v-3h2v3h12v-3h2v3q0 .825-.588 1.413T18 20H6Z"/></svg></button>
+                        <button> <svg class="button-span" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m15 16l-4 4h10v-4h-6m-2.94-8.81L3 16.25V20h3.75l9.06-9.06l-3.75-3.75M5.92 18H5v-.92L12.06 10l.94.94L5.92 18m12.79-9.96c.39-.39.39-1.04 0-1.41l-2.34-2.34a1.001 1.001 0 0 0-1.41 0l-1.83 1.83l3.75 3.75l1.83-1.83Z" /></svg></button>
+                        <button> <svg class="button-span" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z" /></svg></button>
+                    </div>
+                </div>
+            </div>
+        </menu>
+    </div>
+    
+
+
+    <main class="content"> @RenderBody() </main>
+
+
+ 
+    <div class="overlay" id="partWindowOverlay">
+        <div class="popup" id="partWindowPopup">
+            <form method="post" enctype="multipart/form-data">
+                <div class="popup-content" id="uploadFileContent">
+                    <div id="uploadFileForm">
+                        <div>
+                            <b>Upload a file</b>
+                            <p>Attach the file below</p>
+                        </div>
+
+                        <div class="drop-area" id="file-upload-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-48.89 -48.89 586.68 586.68"> <path d="M411.448,100.9l-94.7-94.7c-4.2-4.2-9.4-6.2-14.6-6.2h-210.1c-11.4,0-20.8,9.4-20.8,20.8v330.8c0,11.4,9.4,20.8,20.8,20.8 h132.1v95.7c0,11.4,9.4,20.8,20.8,20.8s20.8-9.4,20.8-19.8v-96.6h132.1c11.4,0,19.8-9.4,19.8-19.8V115.5 C417.748,110.3,415.648,105.1,411.448,100.9z M324.048,70.4l39.3,38.9h-39.3V70.4z M378.148,331.9h-112.3v-82.8l17.7,16.3 c10,10,25,3.1,28.1-1c7.3-8.3,7.3-21.8-1-29.1l-52-47.9c-8.3-7.3-20.8-7.3-28.1,0l-52,47.9c-8.3,8.3-8.3,20.8-1,29.1 c8.3,8.3,20.8,8.3,29.1,1l17.7-16.3v82.8h-111.4V41.6h169.6v86.3c0,11.4,9.4,20.8,20.8,20.8h74.9v183.2H378.148z"></path></svg>
+                            <b>Drag file here to upload.</b>
+                            <p>Alternatively, you can select a file by <span>clicking here</span></p>
+                            <input type="file" id="fileInput"> 
+                        </div>
+
+                        <div>
+                            <p>
+                                • File must be a Solidworks part - (.SLDPRT) <br>
+                                • File must be smaller than 100MB
+                            </p>
+                            <div id="uploadFile" onclick="proceedToQuestionnaire()">Upload</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup-content" id="questionnaireContent">
+                    <b id="questionnaireTitle">Questionnaire</b>
+                    <div id="form">
+                        <div class="form-slide active" data-step="1">
+                            <label for="q1">What do you want to call this part</label>
+                            <input type="text" id="q1" placeholder="e.g. Part 1" required>
+                        </div>
+        
+                        <div class="form-slide" data-step="2">
+                            <label for="q2">How many units do you plan to manufacturer</label>
+                            <input type="number" id="q2" placeholder="e.g. 100" required>
+                        </div>
+
+                        <div class="form-slide" data-step="3">
+                            <label for="q3">Choose a material</label>
+                            <select id="q3" requuired>
+                                <option value="Aluminium">Aluminium</option>
+                                <option value="Bronze">Bronze</option>
+                                <option value="Copper">Copper</option>
+                                <option value="Iron">Iron</option>
+                                <option value="Nickel">Nickel</option>
+                                <option value="Alloy steel">Steel (Alloy)</option>
+                                <option value="Carbon steel">Steel (Carbon)</option>
+                                <option value="Stainless steel">Steel (Stainless)</option>
+                                <option value="Titanium">Titanium</option>
+                                <option value="Tin">Tin</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-slide" data-step="4">
+                            <label for="q4">Choose a finish</label>
+                            <select id="q4" requuired>
+                                <option value="None">- - -</option>
+                                <option value="Anodised">Anodized</option>
+                                <option value="Beadblasted">Beadblasted</option>
+                                <option value="Electrocoated">Electrocoated</option>
+                                <option value="Plated">Plated</option>
+                                <option value="Polished">Polished</option>
+                                <option value="Powder coated">Powder Coated</option>
+                            </select>
+                        </div>
+
+                        <div class="form-slide" id="loadingPage" data-step="4">
+                            <svg id="loadingIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g class="spinner_V8m1"><circle cx="12" cy="12" r="9.5" fill="none" stroke-width="3"></circle></g>
+                            </svg> 
+                           <b id="loadingText">Generating PDF</b>
+                        </div>
+                    </div>
+          
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-bar-inner"></div>
+                    </div>
+              
+                    <div class="buttons" id="buttons">
+                        <button class="btn back" id="back" type="button" onclick="prevSlide()">Back</button>
+                        <button class="btn next" id="next" type="button" onclick="nextSlide()">Next</button>
+                        <button class="btn finish" id="finish" type="button" onclick="finishForm()">Finish</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <span class="closeButton" id="closeButton_PartWindow" onclick="closePopup('partWindowOverlay')">&times;</span>
+    </div>
+
+    <script src="~/js/template.js"></script>
+    <script src="~/js/questionnaire.js"></script>
+    <script src="~/js/openPart.js"></script>
+    <script src="~/js/generatePDF.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@*
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> 
+*@
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

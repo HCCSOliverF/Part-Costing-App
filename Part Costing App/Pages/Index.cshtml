@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Main Page";
+//    var newPartInstance = Json.Serialize(Model.newPart);
+}
+
+<h1>Cost Estimator</h1>
+<div class="usage-table">
+    <div class="step-box"><p></p></div>
+    <div class="step-box"><p></p></div>
+    <div class="step-box"><p></p></div>
+    <div class="step-box"><p></p></div>
+</div>
+<button class="button-container" id="newPartButton" onclick="openPopup('partWindowPopup', 'partWindowOverlay')">
+    <div class="shadow-button new-part-button-Main_Page"></div>
+    <h2>New Part</h2>
+</button>
